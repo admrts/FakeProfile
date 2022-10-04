@@ -20,7 +20,8 @@
 		49E39DD228EC76BC00C4C86C /* FPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DD128EC76BC00C4C86C /* FPError.swift */; };
 		49E39DD428EC81BE00C4C86C /* FPImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DD328EC81BE00C4C86C /* FPImageView.swift */; };
 		49E39DD628ECA4FD00C4C86C /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DD528ECA4FD00C4C86C /* FavoritesVC.swift */; };
-		49E39DD928ECB1AD00C4C86C /* FavoriteProfile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DD728ECB1AD00C4C86C /* FavoriteProfile.xcdatamodeld */; };
+		49E39DD928ECB1AD00C4C86C /* FakeProfile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DD728ECB1AD00C4C86C /* FakeProfile.xcdatamodeld */; };
+		49E39DDE28ECBA8B00C4C86C /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DDD28ECBA8B00C4C86C /* FavoritesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		49E39DD328EC81BE00C4C86C /* FPImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPImageView.swift; sourceTree = "<group>"; };
 		49E39DD528ECA4FD00C4C86C /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		49E39DD828ECB1AD00C4C86C /* FavoriteProfile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteProfile.xcdatamodel; sourceTree = "<group>"; };
+		49E39DDD28ECBA8B00C4C86C /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				49E39DDA28ECB3CF00C4C86C /* Label */,
 				49E39DDB28ECB3D400C4C86C /* Button */,
 				49E39DDC28ECB3DA00C4C86C /* ImageView */,
+				49E39DDF28ECBA9600C4C86C /* Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				49E39DCA28EC731100C4C86C /* FakeProfile.swift */,
-				49E39DD728ECB1AD00C4C86C /* FavoriteProfile.xcdatamodeld */,
+				49E39DD728ECB1AD00C4C86C /* FakeProfile.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +164,14 @@
 				49E39DD328EC81BE00C4C86C /* FPImageView.swift */,
 			);
 			path = ImageView;
+			sourceTree = "<group>";
+		};
+		49E39DDF28ECBA9600C4C86C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				49E39DDD28ECBA8B00C4C86C /* FavoritesCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +249,8 @@
 				49E39DAC28EC5E2A00C4C86C /* AppDelegate.swift in Sources */,
 				49E39DC928EC726000C4C86C /* RandomProfileVC.swift in Sources */,
 				49E39DD228EC76BC00C4C86C /* FPError.swift in Sources */,
-				49E39DD928ECB1AD00C4C86C /* FavoriteProfile.xcdatamodeld in Sources */,
+				49E39DD928ECB1AD00C4C86C /* FakeProfile.xcdatamodeld in Sources */,
+				49E39DDE28ECBA8B00C4C86C /* FavoritesCell.swift in Sources */,
 				49E39DAE28EC5E2A00C4C86C /* SceneDelegate.swift in Sources */,
 				49E39DC728EC5EF200C4C86C /* FPButton.swift in Sources */,
 				49E39DCF28EC752800C4C86C /* NetworkManager.swift in Sources */,
@@ -456,13 +468,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		49E39DD728ECB1AD00C4C86C /* FavoriteProfile.xcdatamodeld */ = {
+		49E39DD728ECB1AD00C4C86C /* FakeProfile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				49E39DD828ECB1AD00C4C86C /* FavoriteProfile.xcdatamodel */,
 			);
 			currentVersion = 49E39DD828ECB1AD00C4C86C /* FavoriteProfile.xcdatamodel */;
-			path = FavoriteProfile.xcdatamodeld;
+			path = FakeProfile.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

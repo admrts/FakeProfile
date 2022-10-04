@@ -9,24 +9,30 @@ import UIKit
 
 class RandomProfileVC: UIViewController {
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     let profileImage = FPImageView(frame: .zero)
     let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
     let countryLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
     let emailLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
     let phoneLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
     let adressLabel = FPLabel(textAlignment: .center, fontSize: 15, weight: .semibold, textColor: .label)
-    let addButton = FPButton(color: .systemRed, title: "Add Favorite",systemName: "heart.fill")
+    let addFavoriteButton = FPButton(color: .systemRed, title: "Add Favorite",systemName: "heart.fill")
     var profile: FakeProfile!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getRandomProfile()
-        view.backgroundColor = .systemBackground
-        title = "Random Profile"
+        configureViewController()
         configureUI()
+        
        
     }
-    
+    func configureViewController() {
+        view.backgroundColor = .systemBackground
+        title = "Random Profile"
+        addFavoriteButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+    }
     func getRandomProfile() {
         NetworkManager.shared.getRandomProfile { [weak self] result in
             guard let self = self else { return }
@@ -34,7 +40,6 @@ class RandomProfileVC: UIViewController {
             switch result {
             case .success(let profile):
                 self.profile = profile
-                print(profile)
                 DispatchQueue.main.async {
                     self.profileImage.downloadImage(urlString: profile.results[0].picture.large)
                     self.nameLabel.text = "  Name: \(profile.results[0].name.title) \(profile.results[0].name.first) \(profile.results[0].name.last)"
@@ -48,6 +53,33 @@ class RandomProfileVC: UIViewController {
             }
         }
     }
+    
+   
+       
+    
+    @objc func tapButton() {
+        
+        let favoriteProfile = FavoriteProfile(context: context)
+        favoriteProfile.name    = "\(profile.results[0].name.title) \(profile.results[0].name.first) \(profile.results[0].name.last)"
+        favoriteProfile.country = "\(profile.results[0].location.country)"
+        favoriteProfile.phone   = "\(profile.results[0].phone)"
+        favoriteProfile.email   = "\(profile.results[0].email)"
+        favoriteProfile.adress  = "\(profile.results[0].location.street.number) \(profile.results[0].location.street.name)  \(profile.results[0].location.city) / \(profile.results[0].location.country)"
+        let data = profileImage.image?.jpegData(compressionQuality: 0.5)
+        favoriteProfile.picture = data
+        favoriteProfile.id = UUID()
+
+        saveProfile()
+    }
+    
+    func saveProfile() {
+        do  {
+            try context.save()
+            print("success")
+        }catch {
+            print("Save Failed")
+        }
+    }
    
     
     func configureUI() {
@@ -57,7 +89,7 @@ class RandomProfileVC: UIViewController {
         view.addSubview(emailLabel)
         view.addSubview(phoneLabel)
         view.addSubview(adressLabel)
-        view.addSubview(addButton)
+        view.addSubview(addFavoriteButton)
         
         let height: CGFloat = 30
         let padding: CGFloat = 20
@@ -93,10 +125,10 @@ class RandomProfileVC: UIViewController {
             adressLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             adressLabel.heightAnchor.constraint(equalToConstant: height*3),
             
-            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -padding),
-            addButton.leadingAnchor.constraint(equalTo: profileImage.leadingAnchor),
-            addButton.trailingAnchor.constraint(equalTo: profileImage.trailingAnchor),
-            addButton.heightAnchor.constraint(equalToConstant: 50)
+            addFavoriteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -padding),
+            addFavoriteButton.leadingAnchor.constraint(equalTo: profileImage.leadingAnchor),
+            addFavoriteButton.trailingAnchor.constraint(equalTo: profileImage.trailingAnchor),
+            addFavoriteButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
