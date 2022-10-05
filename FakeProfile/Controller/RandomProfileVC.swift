@@ -12,11 +12,11 @@ class RandomProfileVC: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let profileImage = FPImageView(frame: .zero)
-    let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let countryLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let emailLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let phoneLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let adressLabel = FPLabel(textAlignment: .center, fontSize: 15, weight: .semibold, textColor: .label)
+    let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let countryLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let emailLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let phoneLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let adressLabel = FPLabel(textAlignment: .center, fontSize: 15, weight: .semibold)
     let addFavoriteButton = FPButton(color: .systemRed, title: "Add Favorite",systemName: "heart.fill")
     var profile: FakeProfile!
     
@@ -29,8 +29,7 @@ class RandomProfileVC: UIViewController {
        
     }
     func configureViewController() {
-        view.backgroundColor = .systemBackground
-        title = "Random Profile"
+        view.backgroundColor = .systemBrown
         addFavoriteButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
     }
     func getRandomProfile() {

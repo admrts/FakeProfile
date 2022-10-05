@@ -21,7 +21,7 @@ class FPImageView: UIImageView {
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderWidth = 2
-        layer.borderColor = UIColor.label.cgColor
+        layer.borderColor = UIColor.black.cgColor
         layer.cornerRadius = 10
         clipsToBounds = true
         image = UIImage(systemName: "questionmark.circle")

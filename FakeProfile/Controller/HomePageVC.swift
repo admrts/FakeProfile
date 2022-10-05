@@ -10,13 +10,14 @@ import UIKit
 class HomePageVC: UIViewController {
 
    
-    let createButton = FPButton(color: .label, title: "Create Profile",systemName: "plus.app")
+    let createButton = FPButton(color: .black, title: "Create Profile",systemName: "plus.app")
     let favoriteButton = FPButton(color: .systemRed, title: "Favorite Profiles", systemName: "heart.fill")
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBrown
+        
         configureUI()
         actions()
     }

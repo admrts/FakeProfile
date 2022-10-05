@@ -10,17 +10,16 @@ import UIKit
 class FavoritesDetailVC: UIViewController {
 
     let profileImage = FPImageView(frame: .zero)
-    let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let countryLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let emailLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let phoneLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
-    let adressLabel = FPLabel(textAlignment: .center, fontSize: 15, weight: .semibold, textColor: .label)
+    let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let countryLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let emailLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let phoneLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
+    let adressLabel = FPLabel(textAlignment: .center, fontSize: 15, weight: .semibold)
     
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        view.backgroundColor = .systemBackground
-        title = "Detail"
+        view.backgroundColor = .systemBrown
         configureUI()
     }
     

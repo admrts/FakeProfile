@@ -32,18 +32,32 @@ class FavoritesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadProfile()
-        view.backgroundColor = .systemBackground
         configureTableView()
-        tableview.dataSource = self
-        tableview.delegate = self
+        configureViewController()
     }
-    
-    
-    
+
+    func configureViewController() {
+        if nameArray.count == 0 {
+            presentFPAlertOnMainThred(title: "Favorite Profiles not found",
+                                      message: "Please go back and create random profile then click add favorites button",
+                                      buttonTitle: "Ok")
+        }
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = .systemBrown
+        title = "Favorite Profiles"
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.tintColor = UIColor.black;
+        
+    }
     func configureTableView() {
         view.addSubview(tableview)
         tableview.frame = view.bounds
+        tableview.backgroundColor = .systemBrown
+        tableview.dataSource = self
+        tableview.delegate = self
     }
 }
 
@@ -56,10 +70,11 @@ extension FavoritesVC: UITableViewDataSource,UITableViewDelegate {
         cell.nameLabel.text =  nameArray[indexPath.row]
         let data = imageArray[indexPath.row]
         cell.profileImage.image = UIImage(data: data)
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return CGFloat(self.tableview.frame.height/10)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

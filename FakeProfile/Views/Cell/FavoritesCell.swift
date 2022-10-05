@@ -12,12 +12,13 @@ class FavoritesCell: UITableViewCell {
     static let reuseID = "FavoritesCell"
     
     let profileImage = FPImageView(frame: .zero)
-    let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold, textColor: .label)
+    let nameLabel = FPLabel(textAlignment: .left, fontSize: 15, weight: .semibold)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .systemBackground
+        backgroundColor = .systemBrown
         configure()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +28,10 @@ class FavoritesCell: UITableViewCell {
     public func configure() {
         addSubview(profileImage)
         addSubview(nameLabel)
+        selectionStyle = .none
+        accessoryType = .disclosureIndicator
+        
+        
         
         nameLabel.layer.borderWidth = 0
        

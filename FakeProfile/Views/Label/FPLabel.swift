@@ -17,20 +17,21 @@ class FPLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(textAlignment: NSTextAlignment, fontSize: CGFloat, weight: UIFont.Weight, textColor: UIColor) {
+    init(textAlignment: NSTextAlignment, fontSize: CGFloat, weight: UIFont.Weight) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: fontSize,weight: weight)
-        self.textColor = textColor
+        
         configure()
     }
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         adjustsFontSizeToFitWidth = true
+        textColor = .black
         numberOfLines = 0
         layer.borderWidth = 2
-        layer.borderColor = UIColor.label.cgColor
+        layer.borderColor = UIColor.black.cgColor
         layer.cornerRadius = 10
     }
 }

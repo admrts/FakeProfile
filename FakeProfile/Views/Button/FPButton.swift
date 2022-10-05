@@ -20,12 +20,12 @@ class FPButton: UIButton {
     convenience init(color: UIColor, title: String, systemName: String) {
         self.init(frame: .zero)
         configuration?.baseBackgroundColor = color
-        configuration?.baseForegroundColor = color
+        configuration?.baseForegroundColor = .white
         configuration?.image = UIImage(systemName: systemName)
         configuration?.title = title
     }
      func configure() {
-        configuration = .tinted()
+        configuration = .filled()
 
         translatesAutoresizingMaskIntoConstraints = false
         configuration?.cornerStyle = .large
