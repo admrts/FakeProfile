@@ -24,11 +24,11 @@ class FPButton: UIButton {
         configuration?.image = UIImage(systemName: systemName)
         configuration?.title = title
     }
-    private func configure() {
+     func configure() {
         configuration = .tinted()
-        configuration?.cornerStyle = .large
+
         translatesAutoresizingMaskIntoConstraints = false
-        
+        configuration?.cornerStyle = .large
         configuration?.imagePadding = 5
         configuration?.imagePlacement = .leading
        

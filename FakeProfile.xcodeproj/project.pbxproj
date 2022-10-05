@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4915887228ED7D84004B8E92 /* FavoritesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4915887128ED7D84004B8E92 /* FavoritesDetailVC.swift */; };
 		49E39DAC28EC5E2A00C4C86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DAB28EC5E2A00C4C86C /* AppDelegate.swift */; };
 		49E39DAE28EC5E2A00C4C86C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E39DAD28EC5E2A00C4C86C /* SceneDelegate.swift */; };
 		49E39DB528EC5E2B00C4C86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E39DB428EC5E2B00C4C86C /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4915887128ED7D84004B8E92 /* FavoritesDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailVC.swift; sourceTree = "<group>"; };
 		49E39DA828EC5E2A00C4C86C /* FakeProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E39DAB28EC5E2A00C4C86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E39DAD28EC5E2A00C4C86C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				49E39DC128EC5E5C00C4C86C /* HomePageVC.swift */,
 				49E39DC828EC726000C4C86C /* RandomProfileVC.swift */,
 				49E39DD528ECA4FD00C4C86C /* FavoritesVC.swift */,
+				4915887128ED7D84004B8E92 /* FavoritesDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				49E39DAC28EC5E2A00C4C86C /* AppDelegate.swift in Sources */,
 				49E39DC928EC726000C4C86C /* RandomProfileVC.swift in Sources */,
 				49E39DD228EC76BC00C4C86C /* FPError.swift in Sources */,
+				4915887228ED7D84004B8E92 /* FavoritesDetailVC.swift in Sources */,
 				49E39DD928ECB1AD00C4C86C /* FakeProfile.xcdatamodeld in Sources */,
 				49E39DDE28ECBA8B00C4C86C /* FavoritesCell.swift in Sources */,
 				49E39DAE28EC5E2A00C4C86C /* SceneDelegate.swift in Sources */,

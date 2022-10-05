@@ -71,17 +71,7 @@ class RandomProfileVC: UIViewController {
 
         saveProfile()
     }
-    
-    func saveProfile() {
-        do  {
-            try context.save()
-            print("success")
-        }catch {
-            print("Save Failed")
-        }
-    }
-   
-    
+ 
     func configureUI() {
         view.addSubview(profileImage)
         view.addSubview(nameLabel)
@@ -130,5 +120,16 @@ class RandomProfileVC: UIViewController {
             addFavoriteButton.trailingAnchor.constraint(equalTo: profileImage.trailingAnchor),
             addFavoriteButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+}
+//MARK: - CoreData
+extension RandomProfileVC {
+    func saveProfile() {
+        do  {
+            try context.save()
+            print("success")
+        }catch {
+            print("Save Failed")
+        }
     }
 }
